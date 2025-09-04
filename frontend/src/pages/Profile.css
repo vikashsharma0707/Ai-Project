@@ -1,0 +1,130 @@
+/* Wrapper */
+.pf-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 18px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
+}
+
+/* Cards */
+.pf-card {
+  display: grid;
+  gap: 12px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.03);
+}
+.pf-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.pf-card h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #0f172a;
+}
+
+/* Segmented control (User/Admin switch) */
+.seg {
+  display: inline-flex;
+  gap: 0;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  padding: 3px;
+}
+.seg-opt {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 13px;
+  color: #374151;
+  cursor: pointer;
+  user-select: none;
+}
+.seg-opt input { display: none; }
+.seg-opt.on {
+  background: #111827;
+  color: #fff;
+}
+
+/* Fields */
+.pf-field {
+  display: grid;
+  gap: 6px;
+}
+.pf-field label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #334155;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.pf-field input {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #0f172a;
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+.pf-field input:focus {
+  outline: none;
+  border-color: #c7d2fe;
+  box-shadow: 0 0 0 3px rgba(59,130,246,.18);
+}
+
+/* Buttons */
+.btn {
+  cursor: pointer;
+  user-select: none;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #0f172a;
+  padding: 10px 14px;
+  font-weight: 700;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background .18s ease, border-color .18s ease, box-shadow .18s ease, transform .06s ease;
+}
+.btn:hover { border-color: #c7d2fe; box-shadow: 0 6px 14px rgba(59,130,246,.08); }
+.btn:active { transform: translateY(1px); }
+
+.btn-dark {
+  background: #111827;
+  color: #fff;
+  border-color: #111827;
+}
+.btn-dark:hover {
+  filter: brightness(1.05);
+  box-shadow: 0 8px 18px rgba(17,24,39,.22);
+}
+
+/* Helper text */
+.tip {
+  margin: 2px 0 0;
+  color: #64748b;
+  font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 760px) {
+  .pf-wrap {
+    grid-template-columns: 1fr; /* stack cards */
+    padding: 14px;
+  }
+}

@@ -1,0 +1,75 @@
+.visual-panel {
+  padding: 20px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.vs-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.vs-sub {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 14px;
+}
+
+.vs-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.vs-select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+  background: #fff;
+  transition: border-color .2s;
+}
+.vs-select:focus { border-color: #2563eb; outline: none; }
+
+.vs-upload {
+  display: inline-block;
+  padding: 8px 12px;
+  border: 1px dashed #9ca3af;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #374151;
+  background: #f9fafb;
+  transition: border-color .2s, background .2s;
+}
+.vs-upload:hover {
+  border-color: #2563eb;
+  background: #f3f4f6;
+}
+.vs-upload input {
+  display: none;
+}
+
+.vs-btn {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s;
+}
+.vs-btn:hover { background: #1d4ed8; }
+
+.vs-results {
+  margin-top: 12px;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}

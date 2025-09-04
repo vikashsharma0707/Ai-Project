@@ -1,0 +1,49 @@
+.blog-wrap {
+  max-width: 1200px; margin: 96px auto 32px; padding: 0 16px; color:#111827;
+}
+.row { display:flex; align-items:center; }
+.row.space { justify-content: space-between; }
+.row.gap { gap: 12px; }
+.muted { color:#6b7280; }
+
+.blog-top h2 { font-size:1.6rem; font-weight:700; }
+.blog-search {
+  padding:10px 12px; border:1px solid #e5e7eb; border-radius:999px;
+  outline:none; width:240px;
+}
+.blog-search:focus { border-color:#2563eb; box-shadow:0 0 0 3px rgba(37,99,235,.12); }
+.blog-select {
+  padding:10px 12px; border:1px solid #e5e7eb; border-radius:10px; background:#fff;
+}
+
+.blog-grid {
+  margin-top:16px;
+  display:grid; gap:14px;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+}
+@media (max-width: 960px){ .blog-grid{ grid-template-columns: repeat(2,1fr);} }
+@media (max-width: 640px){ .blog-grid{ grid-template-columns: 1fr; } }
+
+.post-card{
+  border:1px solid #e5e7eb; border-radius:14px; overflow:hidden; background:#fff;
+  transition:transform .15s, box-shadow .15s;
+}
+.post-card:hover{ transform: translateY(-2px); box-shadow:0 6px 16px rgba(17,24,39,.08); }
+
+.post-card .thumb img{ width:100%; height:200px; object-fit:cover; display:block; }
+
+.post-body{ padding:12px; display:flex; flex-direction:column; gap:6px; }
+.tag{ background:#f1f5ff; color:#2563eb; padding:2px 8px; border-radius:999px; font-size:.8rem; }
+.title{ color:#111827; font-weight:700; text-decoration:none; }
+.title:hover{ color:#2563eb; }
+.excerpt{ color:#4b5563; font-size:.95rem; }
+.readmore{ text-decoration:none; color:#2563eb; font-weight:600; }
+
+.post-page{ max-width: 900px; margin:96px auto 32px; padding:0 16px; color:#111827; }
+.post-hero img{ width:100%; height:360px; object-fit:cover; border-radius:12px; }
+.post-title{ margin:12px 0 8px; font-size:2rem; font-weight:800; }
+.post-content p{ margin:8px 0; line-height:1.6; color:#374151; }
+.post-content ul, .post-content ol{ margin-left:18px; color:#374151; }
+.post-foot{ margin-top:16px; }
+.btn{ background:#111827; color:#fff; border:none; padding:10px 16px; border-radius:9999px; cursor:pointer; }
+.btn.outline{ background:#fff; color:#111827; border:1px solid #e5e7eb; }

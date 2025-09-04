@@ -1,0 +1,200 @@
+/* ==========================
+   Banner Carousel (banner.css)
+   Works with your JSX classes
+   ========================== */
+
+/* Wrapper */
+.bnr-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  background: #0b1220; /* fallback while images load */
+}
+
+/* Slides */
+.bnr-slide {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center start;
+  text-decoration: none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* default height/aspect; adjusts via media queries below */
+  min-height: 420px;
+
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity .45s ease, transform .6s ease;
+}
+.bnr-slide.active {
+  position: relative; /* lift on top */
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Subtle dark gradient for text legibility */
+.bnr-slide::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.45));
+  pointer-events: none;
+}
+
+/* Content block */
+.bnr-content {
+  position: relative;
+  z-index: 1;
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 28px 16px;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0,0,0,.35);
+}
+
+.bnr-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.28);
+  backdrop-filter: blur(4px);
+  margin-bottom: 10px;
+}
+
+.bnr-title {
+  margin: 6px 0 6px;
+  font-size: clamp(22px, 4vw, 44px);
+  line-height: 1.12;
+  font-weight: 900;
+}
+
+.bnr-sub {
+  margin: 0 0 14px;
+  font-size: clamp(14px, 1.6vw, 18px);
+  line-height: 1.5;
+  opacity: .95;
+  max-width: 60ch;
+}
+
+.bnr-cta {
+  display: inline-block;
+  margin-top: 2px;
+  font-weight: 800;
+  font-size: 14px;
+  color: #0b1220;
+  background: #ffffff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.7);
+  box-shadow: 0 10px 22px rgba(0,0,0,.18);
+  transition: transform .1s ease, box-shadow .2s ease, filter .2s ease;
+}
+.bnr-cta:hover { transform: translateY(-1px); filter: brightness(1.02); }
+.bnr-cta:active { transform: translateY(0); }
+
+/* Arrows */
+.bnr-arrow {
+  position: absolute;
+  top: 50%; translate: 0 -50%;
+  width: 40px; height: 40px;
+  display: grid; place-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.3);
+  background: rgba(255,255,255,.14);
+  color: #fff;
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition: background .2s ease, border-color .2s ease, transform .06s ease;
+  z-index: 2;
+}
+.bnr-arrow:hover {
+  background: rgba(255,255,255,.22);
+  border-color: rgba(255,255,255,.5);
+}
+.bnr-arrow:active { transform: scale(.98); }
+
+.bnr-arrow.left  { left: 10px; }
+.bnr-arrow.right { right: 10px; }
+
+/* Dots */
+.bnr-dots {
+  position: absolute; left: 50%; bottom: 14px; translate: -50% 0;
+  display: flex; gap: 8px; z-index: 2;
+}
+.bnr-dot {
+  width: 10px; height: 10px; border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.6);
+  background: rgba(255,255,255,.25);
+  cursor: pointer;
+  transition: transform .1s ease, background .2s ease, border-color .2s ease;
+}
+.bnr-dot:hover { transform: scale(1.08); }
+.bnr-dot.active {
+  background: #fff;
+  border-color: #fff;
+  transform: scale(1.15);
+}
+
+/* --------------------------
+   Responsive heights / layout
+   -------------------------- */
+
+/* Big desktop */
+@media (min-width: 1280px){
+  .bnr-slide { min-height: 520px; }
+  .bnr-content { padding: 40px 20px; }
+}
+
+/* Tablets */
+@media (max-width: 1024px){
+  .bnr-slide { min-height: 420px; }
+  .bnr-content { padding: 24px 16px; }
+}
+
+/* Mobiles */
+@media (max-width: 680px){
+  .bnr-slide { min-height: 320px; }
+  .bnr-content { width: 92%; padding: 18px 14px; }
+  .bnr-badge { font-size: 11px; padding: 5px 9px; }
+  .bnr-cta { padding: 9px 12px; border-radius: 8px; font-size: 13px; }
+  .bnr-arrow { width: 36px; height: 36px; }
+}
+
+/* Very small phones */
+@media (max-width: 420px){
+  .bnr-slide { min-height: 260px; }
+  .bnr-sub { max-width: 40ch; }
+}
+
+/* Hide arrows on tiny screens (swipe instead) */
+@media (max-width: 560px){
+  .bnr-arrow { display: none; }
+  .bnr-dots { bottom: 10px; }
+}
+
+/* --------------------------
+   Motion/accessibility tweaks
+   -------------------------- */
+@media (prefers-reduced-motion: reduce){
+  .bnr-slide { transition: none; }
+  .bnr-arrow, .bnr-dot, .bnr-cta { transition: none; }
+}
+
+/* Keyboard focus visible */
+.bnr-arrow:focus-visible,
+.bnr-dot:focus-visible,
+.bnr-cta:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Pause autoplay on hover (your JS already clears interval; this just cues UI) */
+.bnr-wrap:hover .bnr-cta { box-shadow: 0 12px 26px rgba(0,0,0,.22); }

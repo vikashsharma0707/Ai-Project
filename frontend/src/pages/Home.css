@@ -1,0 +1,62 @@
+/* Page wrapper keeps full-width hero + padded inner content */
+.home-wrap { width: 100%; }
+.home-container { max-width: 1180px; margin: 0 auto; padding: 16px 12px; }
+
+/* Sections */
+.home-section { padding: 10px 0 20px; }
+.sec-head { display:flex; align-items:baseline; justify-content:space-between; gap:10px; margin: 8px 2px 12px; }
+.sec-title {
+  margin: 0;
+  font-size: clamp(18px, 3.4vw, 22px);
+  color: #0f172a;
+}
+.sec-sub { margin: 0; color: #64748b; font-size: 13px; }
+
+/* Products grid
+   NOTE: If you already defined .products-grid inside ProductCard.css, keep one.
+   This version matches earlier style and is responsive. */
+.products-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+@media (max-width: 1400px){ .products-grid{ grid-template-columns: repeat(5,1fr);} }
+@media (max-width: 1200px){ .products-grid{ grid-template-columns: repeat(4,1fr);} }
+@media (max-width: 992px){  .products-grid{ grid-template-columns: repeat(3,1fr);} }
+@media (max-width: 768px){  .products-grid{ grid-template-columns: repeat(2,1fr);} }
+@media (max-width: 520px){  .products-grid{ grid-template-columns: 1fr; } }
+
+/* --------------------------
+   Lightweight skeleton for cards
+   -------------------------- */
+.skeleton {
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #fff;
+  overflow: hidden;
+}
+.sk-media { aspect-ratio: 4/3; background: #f1f5f9; position: relative; }
+.sk-body { padding: 12px; display: grid; gap: 8px; }
+.sk-line {
+  height: 12px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #eef2f7, #f8fafc, #eef2f7);
+  background-size: 200% 100%;
+  animation: sk 1.2s ease-in-out infinite;
+}
+.sk-line.w40 { width: 40%; }
+.sk-line.w60 { width: 60%; }
+.sk-line.w80 { width: 80%; }
+.sk-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px; }
+.sk-btn { height: 36px; border-radius: 8px; background: #eef2f7; animation: sk 1.2s ease-in-out infinite; }
+
+@keyframes sk {
+  0% { background-position: 0% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Optional: spacing polish for VisualSearch area */
+.home-section .visual-search-root,
+.home-section .visual-search {
+  margin-top: 6px;
+}
