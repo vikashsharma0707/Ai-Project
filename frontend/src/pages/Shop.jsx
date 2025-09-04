@@ -336,7 +336,7 @@ import http from "../api/http";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../store/cartSlice";
 import { Link } from "react-router-dom";
-import "../assets/css/shop.css";
+// import "../assets/css/shop.css";
 
 // 🔔 Toasts
 import { ToastContainer, toast } from "react-toastify";
