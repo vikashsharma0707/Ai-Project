@@ -1,0 +1,136 @@
+.chat-assistant {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 420px;
+  height: 620px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+  border: 1px solid #ddd;
+}
+
+.chat-assistant.open { display: flex; }
+
+.chat-header {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: white;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.agents-grid {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  overflow-y: auto;
+  flex: 1;
+  background: #f8fafc;
+}
+
+.agent-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  gap: 12px;
+}
+
+.agent-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  border-color: #6366f1;
+}
+
+.agent-icon {
+  font-size: 28px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0ff;
+  border-radius: 10px;
+}
+
+.agent-info h4 {
+  margin: 0 0 4px 0;
+  font-size: 15px;
+}
+
+.agent-info p {
+  margin: 0;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background: #f8fafc;
+}
+
+.message {
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  border-radius: 18px;
+  max-width: 85%;
+}
+
+.message.bot {
+  background: white;
+  border: 1px solid #e2e8f0;
+  align-self: flex-start;
+}
+
+.message.user {
+  background: #4f46e5;
+  color: white;
+  align-self: flex-end;
+}
+
+.chat-input {
+  padding: 12px;
+  display: flex;
+  gap: 8px;
+  background: white;
+  border-top: 1px solid #e2e8f0;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9999px;
+  font-size: 15px;
+}
+
+
+.agent-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.agent-card:hover {
+  border-color: #6366f1;
+  transform: translateY(-2px);
+}
+
+.agent-icon { font-size: 32px; }

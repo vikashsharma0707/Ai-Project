@@ -38,7 +38,7 @@ import axios from "axios";
 
 // 👉 named export bhi do, taa-ki slices/components import kar saken
 export const API_BASE =
-  (import.meta.env.VITE_API_BASE || "https://ai-powered-fashion-ecommerce.onrender.com/").replace(/\/+$/, "");
+  (import.meta.env.VITE_API_BASE || "http://localhost:5000").replace(/\/+$/, "");
 
 const http = axios.create({
   baseURL: API_BASE,

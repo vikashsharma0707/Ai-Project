@@ -1,0 +1,107 @@
+.admin-ai-page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.admin-ai-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.robot-icon {
+  font-size: 42px;
+}
+
+.admin-ai-header h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.agents-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.agent-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
+}
+
+.agent-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  border-color: #6366f1;
+}
+
+.agent-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  background: #f0f9ff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+}
+
+.agent-info h3 {
+  margin: 0 0 6px 0;
+  font-size: 18px;
+  color: #1f2937;
+}
+
+.agent-info p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 15px;
+}
+
+/* Chat Box */
+.ai-chat-box {
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 20px;
+  min-height: 300px;
+  border: 1px solid #e5e7eb;
+}
+
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.chat-message {
+  padding: 14px 18px;
+  border-radius: 12px;
+  max-width: 85%;
+}
+
+.chat-message.bot {
+  background: white;
+  border: 1px solid #e5e7eb;
+  align-self: flex-start;
+}
+
+.chat-message.user {
+  background: #6366f1;
+  color: white;
+  align-self: flex-end;
+}

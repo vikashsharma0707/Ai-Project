@@ -220,8 +220,13 @@ import orderRoutes from './routes/orderRoutes.js';
 import adminRoutes from './routes/adminRoutes.js';
 import aiRoutes from './routes/aiRoutes.js';
 import paymentsRoutes from './routes/paymentsRoutes.js';
+import virtualRoutes from "./routes/virtualTryOnRoutes.js"
 
 import { notFound, errorHandler } from './middlewares/error.js';
+// In your main server.js or app.js
+import adminAIRoutes from './routes/adminAIRoutes.js';
+
+
 
 const app = express();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -274,6 +279,10 @@ app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/ai', aiRoutes);
+// ... after other routes
+app.use('/api/admin/ai', adminAIRoutes);
+app.use('/api/ai', virtualRoutes);
+
 
 /** Errors */
 app.use(notFound);

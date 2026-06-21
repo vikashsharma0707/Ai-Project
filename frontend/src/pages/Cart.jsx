@@ -1,34 +1,3 @@
-// import React from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
-// import { updateQty, removeFromCart } from '../store/cartSlice.js';
-// import { Link } from 'react-router-dom';
-
-// export default function Cart(){
-//   const items = useSelector(s=>s.cart.items);
-//   const dispatch = useDispatch();
-//   const total = items.reduce((s,i)=>s+i.price*i.qty,0);
-//   return (
-//     <div>
-//       <h2>My Cart</h2>
-//       {!items.length && <p>Cart empty. <Link to="/catalog">Shop now</Link></p>}
-//       {items.map(it => <div key={it.sku} className="row space border pad">
-//         <div>{it.title} ({it.size})</div>
-//         <div>₹{it.price}</div>
-//         <div className="row gap">
-//           <button onClick={()=>dispatch(updateQty({ sku: it.sku, qty: it.qty-1 }))}>-</button>
-//           <span>{it.qty}</span>
-//           <button onClick={()=>dispatch(updateQty({ sku: it.sku, qty: it.qty+1 }))}>+</button>
-//         </div>
-//         <div>₹{(it.price*it.qty).toFixed(0)}</div>
-//         <button onClick={()=>dispatch(removeFromCart(it.sku))}>Remove</button>
-//       </div>)}
-//       {!!items.length && <div className="row space">
-//         <b>Net Amount</b><b>₹{total}</b>
-//         <Link to="/checkout" className="btn">Checkout</Link>
-//       </div>}
-//     </div>
-//   );
-// }
 
 
 import React from "react";
