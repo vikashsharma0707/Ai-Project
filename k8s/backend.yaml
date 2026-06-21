@@ -19,18 +19,8 @@ spec:
             - containerPort: 5000
           env:
             - name: MONGO_URI
-              value: "mongodb://mongodb:27017/myntra"
+              value: "mongodb://mongodb:27017/myntra"   # Yeh sahi hai
             - name: PORT
               value: "5000"
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: backend
-spec:
-  selector:
-    app: backend
-  ports:
-    - port: 5000
-      targetPort: 5000
+            - name: NODE_ENV
+              value: "production"
